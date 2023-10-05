@@ -424,13 +424,13 @@ function mainEntrance() {
   
   var animate = (() => {
       // Calcular o ângulo de rotação com base no tempo (ou qualquer outra lógica)
-      var rad = (Date.now() * 0.001) % (Math.PI * 2); // Exemplo: rotacionar ao longo do tempo
+      //var rad = (Date.now() * 0.001) % (Math.PI * 2); // Exemplo: rotacionar ao longo do tempo
 
-      // Chame a função draw passando o ângulo de rotação calculado
-      draw(gl, rad);
+      // Chama a função draw passando o ângulo de rotação calculado
+      draw(gl, deg2rad(180));
 
-       // Use o requestAnimationFrame para chamar a função animate novamente no próximo quadro
-      requestAnimationFrame(animate);
+      // Use o requestAnimationFrame para chamar a função animate novamente no próximo quadro
+      //requestAnimationFrame(animate);
   })();
 
   animate();
