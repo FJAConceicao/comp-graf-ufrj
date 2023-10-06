@@ -229,11 +229,11 @@ function makeNormalMatrixElements(model, view) {
 }
 
 /**
- * Convert an angle in degrees to radians.
+ * Convert an angulo in degrees to radians.
  *
  * @function
- * @param {Number} deg angle in degrees.
- * @returns {Number} angle in radians.
+ * @param {Number} deg angulo in degrees.
+ * @returns {Number} angulo in radians.
  */
 const deg2rad = (deg) => (deg * Math.PI) / 180.0;
 
@@ -241,7 +241,7 @@ const deg2rad = (deg) => (deg * Math.PI) / 180.0;
  * Render our geometry.
  *
  * @param {WebGLRenderingContext} gl WebGL context.
- * @param {Number} rad rotation angle for the cubes.
+ * @param {Number} rad rotation angulo for the cubes.
  */
 function draw(gl, rad) {
   // clear the framebuffer
@@ -416,21 +416,31 @@ function mainEntrance() {
 
   /**
    * A closure to set up an animation loop in which the
-   * angle grows by "increment" each frame.
+   * angulo grows by "increment" each frame.
    * @return {updateModelMatrix}
    * @function
    * @global
    */
   
   var animate = (() => {
-      // Calcular o ângulo de rotação com base no tempo (ou qualquer outra lógica)
-      //var rad = (Date.now() * 0.001) % (Math.PI * 2); // Exemplo: rotacionar ao longo do tempo
 
-      // Chama a função draw passando o ângulo de rotação calculado
-      draw(gl, deg2rad(180));
+    // Inicializa variáveis para controle de animação
+    var angulo = 0.0;
+    var anguloDaOrbita = 0.0;
+    var incrementaDoAngulo = 1.0;
+    var incrementoDaOrbita = 1.0;
+    var contadorDeQuadro = 0;
+    var totalGraus = 360;
 
-      // Use o requestAnimationFrame para chamar a função animate novamente no próximo quadro
-      //requestAnimationFrame(animate);
+    // Função de animação
+    return function () {
+      angulo = angulo + incrementaDoAngulo;
+      angulo = angulo % totalGraus;
+      anguloDaOrbita = anguloDaOrbita + incrementoDaOrbita;
+      draw(gl, deg2rad(angulo), anguloDaOrbita);
+      contadorDeQuadro = contadorDeQuadro + 1;
+      requestAnimationFrame(animate);
+    };
   })();
 
   animate();
