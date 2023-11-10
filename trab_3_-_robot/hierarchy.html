@@ -31,18 +31,16 @@
 
         attribute vec4 a_Position;
         attribute vec3 a_Normal;
-        varying vec4 a_color;
-        
+
+        varying vec4 color;
         void main()
         {
-          float ambientFactor = 0.2;
-          float kd = 0.7;
-          vec3 lightDirection = normalize((-view * model * a_Position).xyz);
+          float ambientFactor = 0.3;
+          vec3 lightDirection = normalize((view * lightPosition - view * model * a_Position).xyz);
           //vec3 normal = (view * model * vec4(a_Normal, 0.0)).xyz;
           vec3 normal = normalize(normalMatrix * a_Normal);
           float diffuseFactor = max(0.0, dot(lightDirection, normal));
-          //color = u_Color * diffuseFactor + u_Color * ambientFactor;
-          color = a_Color * kd * diffuseFactor + a_Color * ambientFactor;
+          color = u_Color * diffuseFactor + u_Color * ambientFactor;
           color.a = 1.0;
           gl_Position = projection * view * model * a_Position;
         }
