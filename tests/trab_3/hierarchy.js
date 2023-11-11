@@ -403,26 +403,29 @@ function renderCube(matrixStack, matrixLocal) {
         return;
     }
 
-    ///*
+    /*
     var colorIndex = gl.getAttribLocation(lightingShader, "a_Color");
     if (colorIndex < 0) {
         console.log("Failed to get the storage location of a_Color");
         return;
     }
-    //*/
+    */
 
     // "enable" the a_position attribute
     gl.enableVertexAttribArray(positionIndex);
     gl.enableVertexAttribArray(normalIndex);
-    gl.enableVertexAttribArray(colorIndex);
+    //gl.enableVertexAttribArray(colorIndex);
 
     // bind data for points and normals
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     gl.vertexAttribPointer(positionIndex, 3, gl.FLOAT, false, 0, 0);
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexNormalBuffer);
     gl.vertexAttribPointer(normalIndex, 3, gl.FLOAT, false, 0, 0);
+    
+    /*
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
     gl.vertexAttribPointer(colorIndex, 4, gl.FLOAT, false, 0, 0);
+    */
 
     var loc = gl.getUniformLocation(lightingShader, "view");
 
@@ -589,7 +592,7 @@ window.addEventListener("load", (event) => {
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexNormalBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, cube.normals, gl.STATIC_DRAW);
 
-    ///*
+    /*
     // buffer for vertex colors
     vertexColorBuffer = gl.createBuffer();
     if (!vertexColorBuffer) {
@@ -598,7 +601,7 @@ window.addEventListener("load", (event) => {
     }
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, cube.colors, gl.STATIC_DRAW);
-    //*/
+    */
 
     // buffer is not needed anymore (not necessary, really)
     gl.bindBuffer(gl.ARRAY_BUFFER, null);
