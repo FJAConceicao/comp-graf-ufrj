@@ -595,7 +595,7 @@ window.addEventListener("load", (event) => {
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexNormalBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, cube.normals, gl.STATIC_DRAW);
 
-    /*
+    ///*
     // buffer for vertex colors
     vertexColorBuffer = gl.createBuffer();
     if (!vertexColorBuffer) {
@@ -604,7 +604,7 @@ window.addEventListener("load", (event) => {
     }
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, cube.colors, gl.STATIC_DRAW);
-    */
+    //*/
 
     // buffer is not needed anymore (not necessary, really)
     gl.bindBuffer(gl.ARRAY_BUFFER, null);
