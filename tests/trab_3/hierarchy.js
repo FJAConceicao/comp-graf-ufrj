@@ -424,10 +424,10 @@ function renderCube(matrixStack, matrixLocal) {
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexNormalBuffer);
     gl.vertexAttribPointer(normalIndex, 3, gl.FLOAT, false, 0, 0);
     
-    /*
+    ///*
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
     gl.vertexAttribPointer(colorIndex, 4, gl.FLOAT, false, 0, 0);
-    */
+    //*/
 
     var loc = gl.getUniformLocation(lightingShader, "view");
 
@@ -458,6 +458,7 @@ function renderCube(matrixStack, matrixLocal) {
     gl.bindBuffer(gl.ARRAY_BUFFER, null);
     gl.useProgram(null);
 }
+
 /** Code to actually render our geometry. */
 function draw() {
 
