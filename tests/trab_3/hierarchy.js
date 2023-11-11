@@ -403,18 +403,20 @@ function renderCube(matrixStack, matrixLocal) {
         return;
     }
 
-    /*
+    ///*
     var colorIndex = gl.getAttribLocation(lightingShader, "a_Color");
     if (colorIndex < 0) {
         console.log("Failed to get the storage location of a_Color");
         return;
     }
-    */
+    //*/
 
     // "enable" the a_position attribute
     gl.enableVertexAttribArray(positionIndex);
     gl.enableVertexAttribArray(normalIndex);
-    //gl.enableVertexAttribArray(colorIndex);
+    
+    //comented
+    gl.enableVertexAttribArray(colorIndex);
 
     // bind data for points and normals
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
@@ -623,8 +625,8 @@ window.addEventListener("load", (event) => {
     animate();
 });
 
-//function MoveAround() {
-//}
+function MoveAround() {
+}
 
 
 // torsoMatrix.setTranslate(0, 0, 0).rotate(torsoAngle, 0, 1, 0);
