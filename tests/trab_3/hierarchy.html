@@ -36,7 +36,7 @@
         varying vec4 color;
         void main()
         {
-          float ambientFactor = 0.3;
+          float ambientFactor = 0.2;
           float kd = 0.7;
           vec3 lightDirection = normalize((view * lightPosition - view * model * a_Position).xyz);
           //vec3 normal = (view * model * vec4(a_Normal, 0.0)).xyz;
