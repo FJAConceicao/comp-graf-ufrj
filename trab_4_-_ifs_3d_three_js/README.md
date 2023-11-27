@@ -1,7 +1,5 @@
 # IFS 3D com three.js
 
-https://observablehq.com/d/5082eb342bb50cdf@146
-
 View this notebook in your browser by running a web server in this folder. For
 example:
 
