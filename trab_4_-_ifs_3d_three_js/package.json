@@ -1,0 +1,14 @@
+{
+  "name": "5082eb342bb50cdf",
+  "main": "5082eb342bb50cdf@146.js",
+  "version": "146.0.0",
+  "homepage": "https://observablehq.com/d/5082eb342bb50cdf",
+  "author": {
+    "name": "Ademario Vitor",
+    "url": "https://observablehq.com/@adeluigi"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
