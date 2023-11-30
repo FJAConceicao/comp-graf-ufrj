@@ -1,7 +1,5 @@
 function _1(md){return(
-md`# IFS 3D com three.js
-
-Neste notebook, você pode renderizar um IFS (Iterated Function System) 3d que foi modelado com o editor Three.js e exportado como uma cena JSON. Um desses exemplos está incluído no painel Data (o pequeno ícone com um clip à direita). As transformações correspondentes ao IFS correspondem aos objetos que têm um nome que começa por "copy". No exemplo incluído, existem 4 destes, denominados "copy1" ... "copy4". Selecionando um "Max Level" maior do que 0 na interface abaixo irá criar cópias recursivas destes objetos até ao nível dado, enquanto que os outros objetos ficam inalterados.`
+md`# IFS 3D com three.js`
 )}
 
 function _maxLevel(Inputs){return(
