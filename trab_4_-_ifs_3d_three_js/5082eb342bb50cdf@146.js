@@ -127,9 +127,9 @@ export default function define(runtime, observer) {
   main.variable(observer("maxLevel")).define("maxLevel", ["Generators", "viewof maxLevel"], (G, _) => G.input(_));
   main.variable(observer("viewof colorLevel")).define("viewof colorLevel", ["Inputs","d3","maxLevel"], _colorLevel);
   main.variable(observer("colorLevel")).define("colorLevel", ["Generators", "viewof colorLevel"], (G, _) => G.input(_));
-  //main.variable(observer("viewof jsonFile")).define("viewof jsonFile", ["Inputs"], _jsonFile);
-  //main.variable(observer("jsonFile")).define("jsonFile", ["Generators", "viewof jsonFile"], (G, _) => G.input(_));
-  //main.variable(observer()).define(["THREE","htl","invalidation","fractalScene"], _5);
+  main.variable(observer("viewof jsonFile")).define("viewof jsonFile", ["Inputs"], _jsonFile);
+  main.variable(observer("jsonFile")).define("jsonFile", ["Generators", "viewof jsonFile"], (G, _) => G.input(_));
+  main.variable(observer()).define(["THREE","htl","invalidation","fractalScene"], _5);
   
   /*
   main.variable(observer("THREE")).define("THREE", ["require"], _THREE);
