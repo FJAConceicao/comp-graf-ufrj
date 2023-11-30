@@ -134,10 +134,7 @@ export default function define(runtime, observer) {
   main.variable(observer("sceneJSON")).define("sceneJSON", ["jsonFile","FileAttachment"], _sceneJSON);
   main.variable(observer("loadedScene")).define("loadedScene", ["THREE","sceneJSON"], _loadedScene);
   main.variable(observer("fractalScene")).define("fractalScene", ["loadedScene","maxLevel","makeCopies","makeLoop"], _fractalScene);
-  
-  /*
   main.variable(observer("makeCopies")).define("makeCopies", _makeCopies);
   main.variable(observer("makeLoop")).define("makeLoop", ["colorLevel"], _makeLoop);
-  */
   return main;
 }
