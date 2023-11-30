@@ -130,9 +130,9 @@ export default function define(runtime, observer) {
   main.variable(observer("viewof jsonFile")).define("viewof jsonFile", ["Inputs"], _jsonFile);
   main.variable(observer("jsonFile")).define("jsonFile", ["Generators", "viewof jsonFile"], (G, _) => G.input(_));
   main.variable(observer()).define(["THREE","htl","invalidation","fractalScene"], _5);
-  
-  /*
   main.variable(observer("THREE")).define("THREE", ["require"], _THREE);
+  
+  /*  
   main.variable(observer("sceneJSON")).define("sceneJSON", ["jsonFile","FileAttachment"], _sceneJSON);
   main.variable(observer("loadedScene")).define("loadedScene", ["THREE","sceneJSON"], _loadedScene);
   main.variable(observer("fractalScene")).define("fractalScene", ["loadedScene","maxLevel","makeCopies","makeLoop"], _fractalScene);
